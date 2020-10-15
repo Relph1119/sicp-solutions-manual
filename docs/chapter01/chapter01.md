@@ -1,5 +1,5 @@
 # 第1章 构造过程抽象
-## 常用CommonLisp语法：  
+## 常用CommonLisp语法  
 - 过程定义`define`
     ```lisp
     (define (<name> <formal parameters>) <body>)
@@ -31,3 +31,6 @@
     (not <e>)
     ```
     &emsp;&emsp;如果`<e>`求出的值是假，`not`表达式的值就是真；否则其值为假。
+
+## 牛顿逼近法
+&emsp;&emsp;如果对`x`的平方根的值有了一个猜测`y`，那么就可以通过执行一个简单操作去得到一个更好的猜测：只需要求出`y`和`x/y`的平均值（它更接近实际的平方根值）。
