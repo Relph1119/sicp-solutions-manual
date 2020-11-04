@@ -1,5 +1,5 @@
 # 第1章 构造过程抽象
-## 常用CommonLisp语法  
+## 常用MIT-Scheme语法  
 - 过程定义`define`
     ```lisp
     (define (<name> <formal parameters>) <body>)
