@@ -16,7 +16,7 @@
 
 > 书名：计算机程序的构造和解释<br/>
 > 作者：Harold Abelson, Gerald Jay Sussman, Julie Sussman<br/>
-> 译者：裘宗燕
+> 译者：裘宗燕<br/>
 > 出版社：机械工业出版社，中信出版社<br/>
 > 版次：2004年2月第1版<br/>
 
