@@ -129,3 +129,18 @@ b \leftarrow a
 - 如果$n$是0，有0种换零钱的方式
 
 代码见`src\examples\ch01\p27-count-change.scm`  
+
+#### 求幂
+&emsp;&emsp;采用以下递归定义计算给定数的幂：$$b^n=b \cdot b^{n-1} \\ b^0 = 1$$
+&emsp;&emsp;详细代码如下：  
+- 线性递归计算过程的代码见`src\examples\ch01\p29-expt-1.scm`  
+- 线性迭代计算过程的代码见`src\examples\ch01\p29-expt-2.scm`  
+- 采用指数为2的乘幂计算过程的代码见`src\examples\ch01\p30-fast-expt.scm`  
+
+&emsp;&emsp;各计算过程的空间和步数增长阶如下表所示：  
+||空间|步数|
+|---|---|---|
+|线性递归计算过程|$\Theta(n)$|$\Theta(n)$|
+|线性迭代计算过程|$\Theta(n)$|$\Theta(1)$|
+|指数为2的乘幂计算过程|$\Theta(\log n)$|$\Theta(\log n)$|
+
