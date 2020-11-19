@@ -146,3 +146,29 @@ b \leftarrow a
 
 #### 最大公约数
 &emsp;&emsp;两个整数$a$和$b$的最大公约数（GCD）定义为能除尽这两个数的那个最大的整数。
+&emsp;&emsp;计算最大公约数的算法思想（**欧几里得算法**）：如果$r$是$a$除以$b$的余数，那么$a$和$b$的公约数正好也是$b$和$r$的公约数，表达式如下：$$GCD(a,b)=GCD(b,r)$$&emsp;&emsp;迭代计算过程的代码见`src\examples\ch01\p32-gcd.scm`，执行过程如下：
+```shell
+PS > scheme "src\examples\ch01\p32-gcd.scm"
+Chez Scheme Version 9.5
+Copyright 1984-2017 Cisco Systems, Inc.
+
+> (gcd 206 40)
+2
+> (trace gcd)
+(gcd)
+> (gcd 206 40)
+|(gcd 206 40)
+|(gcd 40 6)
+|(gcd 6 4)
+|(gcd 4 2)
+|(gcd 2 0)
+|2
+2
+>
+```
+**Lame定理：** 如果欧几里得算法需要用$k$步计算出一对整数的GCD，那么这对数中较小的那个数必然大于或者等于第$k$个斐波那契数。  
+&emsp;&emsp;欧几里得算法的增长阶计算：  
+> 令$n$是两个数中较小的那个，假设计算过程需要$k$步  
+$n \geqslant \text{Fib}(k) \approx \phi^k/\sqrt{5} $  
+$\therefore \phi \leqslant \log_k (\sqrt{5}n)$  
+可得算法的增长阶为$\Theta(\log n)$
