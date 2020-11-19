@@ -144,3 +144,5 @@ b \leftarrow a
 |线性迭代计算过程|$\Theta(n)$|$\Theta(1)$|
 |指数为2的乘幂计算过程|$\Theta(\log n)$|$\Theta(\log n)$|
 
+#### 最大公约数
+&emsp;&emsp;两个整数$a$和$b$的最大公约数（GCD）定义为能除尽这两个数的那个最大的整数。
