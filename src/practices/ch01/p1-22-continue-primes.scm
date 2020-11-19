@@ -5,6 +5,7 @@
     (cond ((= count 0) (display "are primes."))
           ((prime? n)
            (display n)
-           (newline)
+           (cond ((> count 1) (display ","))
+                 ((= count 1) (display " ")))
            (continue-primes (next-odd n) (- count 1)))
           (else (continue-primes (next-odd n) count))))

@@ -3,5 +3,7 @@
 (define (search-for-primes n)
     (define start-time (current-time))
     (continue-primes n 3)
+    (newline)
     (display " *** ")
+    (newline)
     (display (time-difference (current-time) start-time)))
