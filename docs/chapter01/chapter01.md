@@ -115,7 +115,7 @@ b \leftarrow a
 代码见`src\examples\ch01\p26-fib.scm`  
 
 **实例：换零钱方式的统计**  
-**问题：** 
+**问题：**  
 &emsp;&emsp;给了半美元、四分之一美元、10美分、5美分和1美分的硬币，将1美元换成零钱，一共有多少种不同方式？  
 **问题分析：**  
 &emsp;&emsp;采用递归过程，假设可用硬币类型种类是有顺序的，可列出下面关系：  
@@ -138,6 +138,7 @@ b \leftarrow a
 - 采用指数为2的乘幂计算过程的代码见`src\examples\ch01\p30-fast-expt.scm`  
 
 &emsp;&emsp;各计算过程的空间和步数增长阶如下表所示：  
+
 ||空间|步数|
 |---|---|---|
 |线性递归计算过程|$\Theta(n)$|$\Theta(n)$|
@@ -145,7 +146,7 @@ b \leftarrow a
 |指数为2的乘幂计算过程|$\Theta(\log n)$|$\Theta(\log n)$|
 
 #### 1.2.4 最大公约数
-&emsp;&emsp;两个整数$a$和$b$的最大公约数（GCD）定义为能除尽这两个数的那个最大的整数。
+&emsp;&emsp;两个整数$a$和$b$的最大公约数（GCD）定义为能除尽这两个数的那个最大的整数。  
 &emsp;&emsp;计算最大公约数的算法思想（**欧几里得算法**）：如果$r$是$a$除以$b$的余数，那么$a$和$b$的公约数正好也是$b$和$r$的公约数，表达式如下：$$GCD(a,b)=GCD(b,r)$$&emsp;&emsp;迭代计算过程的代码见`src\examples\ch01\p32-gcd.scm`，执行过程如下：
 ```shell
 PS > scheme "src\examples\ch01\p32-gcd.scm"
@@ -166,16 +167,17 @@ Copyright 1984-2017 Cisco Systems, Inc.
 2
 >
 ```
-**Lame定理：** 如果欧几里得算法需要用$k$步计算出一对整数的GCD，那么这对数中较小的那个数必然大于或者等于第$k$个斐波那契数。  
+&emsp;&emsp;**Lame定理：** 如果欧几里得算法需要用$k$步计算出一对整数的GCD，那么这对数中较小的那个数必然大于或者等于第$k$个斐波那契数。  
 &emsp;&emsp;欧几里得算法的增长阶计算：  
 > 令$n$是两个数中较小的那个，假设计算过程需要$k$步  
 $n \geqslant \text{Fib}(k) \approx \phi^k/\sqrt{5} $  
 $\therefore \phi \leqslant \log_k (\sqrt{5}n)$  
-可得算法的增长阶为$\Theta(\log n)$  
+可得，算法的增长阶为$\Theta(\log n)$  
 
 #### 1.2.5 实例：素数检测
 **寻找因子**  
 &emsp;&emsp;寻找整数n（大于1）的最小整数因子，从2开始的连续整数去检查它们是否整除n，代码见`src\examples\ch01\p33-prime.scm`，`find-divisor`结束判断的条件：如果n不是素数，它必然有一个小于或等于$\sqrt{n}$的因子。该算法的步数增长阶是$\Theta(\sqrt{n})$。  
+
 **费马检查**  
 > 费马小定理：如果$n$是一个素数，$a$是小于$n$的任意正整数，那么$a$的$n$次方与$a$模$n$同余。  
 
