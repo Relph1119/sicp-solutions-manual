@@ -26,6 +26,8 @@
       * [练习1.24](chapter01/p1-24.md)
       * [练习1.25](chapter01/p1-25.md)
       * [练习1.26](chapter01/p1-26.md)
+      * [练习1.27](chapter01/p1-27.md)
+      * [练习1.28](chapter01/p1-28.md)
     * [第2章 构造数据抽象](chapter02/chapter02.md)
     * [第3章 模块化、对象和状态](chapter03/chapter03.md)
     * [第4章 元语言抽象](chapter04/chapter04.md)
