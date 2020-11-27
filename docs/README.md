@@ -2,7 +2,7 @@
 ### 申明
 习题解答主要参考了文献[1]中的内容，补充完善以下内容：  
 - 完善练习1.14的空间和步数增长的阶计算
-- 重新练习1.15的b）的空间和步数增长的阶计算
+- 重写练习1.15的b）的空间和步数增长的阶计算
 - 优化了练习1.22、练习1.23、练习1.24结果打印
 
 ### 使用说明
@@ -25,6 +25,7 @@
 
 ### 参考文献
 【1】[SICP解题集](https://sicp.readthedocs.io/en/latest/)
+【2】[Eli Bendersky's website](https://eli.thegreenplace.net/tag/sicp)
 
 ### 主要贡献者（按首字母排名）
  [@胡锐锋-天国之影-Relph](https://github.com/Relph1119)
