@@ -184,3 +184,24 @@ $\therefore \phi \leqslant \log_k (\sqrt{5}n)$
 &emsp;&emsp;费马检查算法：对于给定的整数n，随机任取一个$a<n$并计算$a^n$取模$n$的余数，如果得到的结果不等于$a$，那么$n$肯定不是素数。如果它等于$a$，那么$n$是素数的机会就很大。通过不断检查$a$，对$n$是素数结果的信心更大。代码见`src\examples\ch01\p34-fast-prime.scm`
 
 ### 1.3 用高阶函数做抽象
+#### 1.3.1 过程作为参数
+&emsp;&emsp;通过给出三个过程`sum-integers`、`sum-cubes`和`pi-sum`，提取出公共部分`sum`过程，代码见`src\examples\ch01\p38-sum.scm`，其中`term`和`next`均可使用过程来入参。  
+
+#### 1.3.2 用lambda构造过程
+**用`lambda`构造过程**
+&emsp;&emsp;使用`lambda`可以创建匿名函数，示例代码见`src\examples\ch01\p41-pi-sum.scm`和`src\examples\ch01\p41-integral.scm`  
+**用`let`创建局部变量**  
+&emsp;&emsp;计算函数$$f(x,y)=x(1+xy)^2+y(1-y)+(1+xy)(1-y)$$&emsp;&emsp;可表述为$$\begin{array}{c}
+a = 1+ xy \\
+b = 1 - y \\
+f(x,y) = xa^2 + yb + ab
+\end{array}$$
+&emsp;&emsp;可使用`let`函数用以描述约束局部变量，代码见`src\examples\ch01\p42-f.scm`  
+`let`表达式的一般形式是：
+```lisp
+(let ((<var_1> <exp_1>)
+      (<var_2> <exp_2>)
+      ...
+      (<var_n> <exp_n>))
+    <body>)
+```
