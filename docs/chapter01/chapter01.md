@@ -44,14 +44,13 @@
 #### 1.1.3 内部定义和块结构
 &emsp;&emsp;通过将子过程局部化，将辅助函数隐藏在`sqrt`函数的里面，见代码`src\examples\ch01\p19-sqrt.scm`。  
 &emsp;&emsp;除了可以将所用的辅助过程定义放到函数内部，还可以进一步简化，因为`x`在`sqrt`的定义中是受约束的，过程`good-enough?`
-`improve`和`sqrt-iter`都定义在`sqrt`里面，即都在`x`的定义域里，可以让`x`作为内部定义中的自由变量，这种方式称为**词法作用域**。代码见`src\examples\ch01\p20-sqrt.scm`。  
+&emsp;&emsp;`improve`和`sqrt-iter`都定义在`sqrt`里面，即都在`x`的定义域里，可以让`x`作为内部定义中的自由变量，这种方式称为**词法作用域**。代码见`src\examples\ch01\p20-sqrt.scm`。  
 
 ### 1.2 过程与它们所产生的计算
 &emsp;&emsp;一个过程就是一种模式，它描述了一个计算过程的局部演化方法，描述了这一计算过程中的每个步骤是怎么基于前面的步骤建立起来的。  
 #### 1.2.1 线性的递归和迭代
-阶乘函数：$n!=n \cdot (n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1$  
-另一种最简单的方法：对于一个正整数$n$，$n!$就等于$n$乘以$(n-1)!$：$$n!=n \cdot [(n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1] = n \cdot (n-1)!$$
-代码见`src\examples\ch01\p21-factorial.scm`，使用`trace`函数追踪计算`(factorial 6)`：  
+&emsp;&emsp;阶乘函数：$n!=n \cdot (n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1$  
+&emsp;&emsp;另一种最简单的方法：对于一个正整数$n$，$n!$就等于$n$乘以$(n-1)!$：$$n!=n \cdot [(n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1] = n \cdot (n-1)!$$&emsp;&emsp;代码见`src\examples\ch01\p21-factorial.scm`，使用`trace`函数追踪计算`(factorial 6)`：  
 ```shell
 PS > scheme "src\examples\ch01\p21-factorial.scm"
 Chez Scheme Version 9.5
@@ -96,11 +95,13 @@ Copyright 1984-2017 Cisco Systems, Inc.
 720
 >
 ```
-- 递归计算过程：其代换模型是一种先逐步展开而后收缩的形状，在展开阶段，构造一个推迟进行的操作所形成的链条，收缩阶段表现为运算的实际执行。
-- 迭代计算过程：计算过程中没有任何增长或者收缩，其状态可以用固定数目的状态变量，同时存在一套固定规则，描述计算过程中从一个状态到下一个状态转换时，这些变量的更新方式，还有一个结束检测，描述这一计算过程终止的条件。  
+- 递归计算过程：
+  &emsp;&emsp;其代换模型是一种先逐步展开而后收缩的形状，在展开阶段，构造一个推迟进行的操作所形成的链条，收缩阶段表现为运算的实际执行。
+- 迭代计算过程
+  &emsp;&emsp;计算过程中没有任何增长或者收缩，其状态可以用固定数目的状态变量，同时存在一套固定规则，描述计算过程中从一个状态到下一个状态转换时，这些变量的更新方式，还有一个结束检测，描述这一计算过程终止的条件。  
 
 #### 1.2.2 树形递归
-斐波那契数列：每个数都是前面两个数之和，其规则定义如下：$$
+&emsp;&emsp;斐波那契数列：每个数都是前面两个数之和，其规则定义如下：$$
 Fib(n)=\left\{
 \begin{array}{ll}
 0 & \text{如果} n=0 \\
@@ -111,8 +112,7 @@ Fib(n-1)+Fib(n-2) & \text{否则}
 $$\begin{array}{l}
 a \leftarrow a+b \\
 b \leftarrow a
-\end{array}$$
-代码见`src\examples\ch01\p26-fib.scm`  
+\end{array}$$&emsp;&emsp;代码见`src\examples\ch01\p26-fib.scm`  
 
 **实例：换零钱方式的统计**  
 **问题：**  
@@ -190,6 +190,7 @@ $\therefore \phi \leqslant \log_k (\sqrt{5}n)$
 #### 1.3.2 用lambda构造过程
 **用`lambda`构造过程**
 &emsp;&emsp;使用`lambda`可以创建匿名函数，示例代码见`src\examples\ch01\p41-pi-sum.scm`和`src\examples\ch01\p41-integral.scm`  
+
 **用`let`创建局部变量**  
 &emsp;&emsp;计算函数$$f(x,y)=x(1+xy)^2+y(1-y)+(1+xy)(1-y)$$&emsp;&emsp;可表述为$$\begin{array}{c}
 a = 1+ xy \\
@@ -205,3 +206,11 @@ f(x,y) = xa^2 + yb + ab
       (<var_n> <exp_n>))
     <body>)
 ```
+
+#### 1.3.3 过程作为一般性的方法
+**通过区间折半寻找方程的根**  
+&emsp;&emsp;为寻找$f(x)=0$的根，区间折半方法的基本思路是：如果对于给定点$a$和$b$有$f(a) < 0 < f(b)$，那么$f$在$a$和$b$之间必然有一个零点。为确定这个零点，令$x$是$a$和$b$的平均值并计算出$f(x)$，如果$f(x)>0$，那么在$a$和$x$之间必然有一个$f$的零点；如果$f(x)<0$，那么在$x$和$b$之间必然有一个$f$的零点。继续这样做下去，就能确定出越来越小的区间，保证其中必然有$f$的一个零点，当区间足够小时，结束这一计算过程。  
+&emsp;&emsp;这种算法所需步数的增长将是$\Theta(\log (L/T))$，其中$L$是区间的初始长度，$T$是可容忍的误差（即认为“足够小”的区间大小），代码见`src\examples\ch01\p44-search.scm`  
+
+**找出函数的不动点**  
+&emsp;&emsp;如果$x$满足方程$f(x)=x$，则称数$x$为函数$f$的不动点。通过从某个初始值出发，反复应用$f$：$$f(x),f(f(x)),f(f(f(x))),\cdots$$&emsp;&emsp;直到值变化不大时，就可以找到它的一个不动点，代码见`src\examples\ch01\p46-fixed-point.scm`
