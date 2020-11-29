@@ -1,7 +1,7 @@
 (define (accumulate combiner null-value term a next b)
-    (define (iter a resule)
+    (define (iter a result)
         (if (> a b)
-            resule
+            result
             (iter (next a)
-                  (combiner resule (term a)))))
+                  (combiner result (term a)))))
     (iter a null-value))

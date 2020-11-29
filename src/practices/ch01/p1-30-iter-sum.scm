@@ -1,7 +1,7 @@
 (define (sum term a next b)
-    (define (iter a resule)
+    (define (iter a result)
         (if (> a b)
-            resule
+            result
             (iter (next a)
-                  (+ (term a) resule))))
+                  (+ (term a) result))))
     (iter a 0))
