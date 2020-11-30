@@ -1,0 +1,11 @@
+(load "src/practices/ch01/p1-46-iterative-improve.scm")
+
+(define (sqrt x)
+    (define dx 0.00001)
+    (define (close-enough? v1 v2)
+        (< (abs (- v1 v2)) dx))
+    (define (improve guess)
+        (define (average x y)
+            (/ (+ x y) 2))
+        (average guess (/ x guess)))
+    ((iterative-improve close-enough? improve) 1.0))
