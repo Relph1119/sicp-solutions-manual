@@ -4,6 +4,7 @@
 - 完善练习1.14的空间和步数增长的阶计算
 - 重写练习1.15的b）的空间和步数增长的阶计算
 - 优化了练习1.22、练习1.23、练习1.24结果打印
+- 优化了练习2.1，使用过程`gcd`进行有理数化简
 
 ### 使用说明
 &emsp;&emsp;计算机程序的构造和解释（原书第二版）习题解答，主要完成了该书的全部习题，并提供代码和运行之后的截图，该习题解答的最佳使用方法是以《计算机程序的构造和解释》为主线，并尝试完成课后习题，如果遇到不会的，再来查阅习题解答。  
@@ -25,7 +26,8 @@
 
 ### 参考文献
 【1】[SICP解题集](https://sicp.readthedocs.io/en/latest/)  
-【2】[Eli Bendersky's website](https://eli.thegreenplace.net/tag/sicp)
+【2】[Eli Bendersky's website](https://eli.thegreenplace.net/tag/sicp)  
+【3】[SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions)
 
 ### 主要贡献者（按首字母排名）
  [@胡锐锋-天国之影-Relph](https://github.com/Relph1119)

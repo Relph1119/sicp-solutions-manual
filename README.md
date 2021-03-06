@@ -25,7 +25,8 @@
 
 ### 参考文献
 【1】[SICP解题集](https://sicp.readthedocs.io/en/latest/)  
-【2】[Eli Bendersky's website](https://eli.thegreenplace.net/tag/sicp)
+【2】[Eli Bendersky's website](https://eli.thegreenplace.net/tag/sicp)  
+【3】[SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions)
 
 ### 主要贡献者（按首字母排名）
  [@胡锐锋-天国之影-Relph](https://github.com/Relph1119)
