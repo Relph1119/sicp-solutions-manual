@@ -52,10 +52,8 @@
 &emsp;&emsp;阶乘函数：$n!=n \cdot (n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1$  
 &emsp;&emsp;另一种最简单的方法：对于一个正整数$n$，$n!$就等于$n$乘以$(n-1)!$：$$n!=n \cdot [(n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1] = n \cdot (n-1)!$$&emsp;&emsp;代码见`src\examples\ch01\p21-factorial.scm`，使用`trace`函数追踪计算`(factorial 6)`：  
 ```shell
-PS > scheme "src\examples\ch01\p21-factorial.scm"
-Chez Scheme Version 9.5
-Copyright 1984-2017 Cisco Systems, Inc.
-
+PS > scheme 
+> (load "src/examples/ch01/p21-factorial.scm")
 > (trace factorial)
 (factorial)
 > (factorial 6)
@@ -76,10 +74,8 @@ Copyright 1984-2017 Cisco Systems, Inc.
 ```
 &emsp;&emsp;采用另一种思路来计算阶乘，先将1和2相乘，而后将都得到的结果乘以3，而后再乘以4，这样下去直到达到$n$，代码见`src\examples\ch01\p22-factorial.scm`，使用`trace`函数追踪计算`(factorial 6)`：  
 ```shell
-PS > scheme "src\examples\ch01\p22-factorial.scm"
-Chez Scheme Version 9.5
-Copyright 1984-2017 Cisco Systems, Inc.
-
+PS > scheme 
+> (load "src/examples/ch01/p22-factorial.scm")
 > (trace fact-iter)
 (fact-iter)
 > (factorial 6)
@@ -149,10 +145,8 @@ b \leftarrow a
 &emsp;&emsp;两个整数$a$和$b$的最大公约数（GCD）定义为能除尽这两个数的那个最大的整数。  
 &emsp;&emsp;计算最大公约数的算法思想（**欧几里得算法**）：如果$r$是$a$除以$b$的余数，那么$a$和$b$的公约数正好也是$b$和$r$的公约数，表达式如下：$$GCD(a,b)=GCD(b,r)$$&emsp;&emsp;迭代计算过程的代码见`src\examples\ch01\p32-gcd.scm`，执行过程如下：
 ```shell
-PS > scheme "src\examples\ch01\p32-gcd.scm"
-Chez Scheme Version 9.5
-Copyright 1984-2017 Cisco Systems, Inc.
-
+PS > scheme 
+> (load "src/examples/ch01/p32-gcd.scm")
 > (gcd 206 40)
 2
 > (trace gcd)
