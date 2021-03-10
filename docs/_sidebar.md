@@ -48,6 +48,7 @@
       * [练习1.46](chapter01/p1-46.md)
     * [第2章 构造数据抽象](chapter02/chapter02.md)
       * [练习2.1](chapter02/p2-01.md)
+      * [练习2.1](chapter02/p2-02.md)
     * [第3章 模块化、对象和状态](chapter03/chapter03.md)
     * [第4章 元语言抽象](chapter04/chapter04.md)
     * [第5章 寄存器机器里的计算](chapter05/chapter05.md)
